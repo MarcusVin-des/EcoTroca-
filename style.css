@@ -1,0 +1,57 @@
+/* Estilo do Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--branco);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Banner Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.jpg');
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    color: white;
+}
+
+/* Container de Cards (O segredo do alinhamento) */
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: -50px; /* Faz os cards subirem um pouco sobre o banner */
+    padding: 0 5%;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+/* Botões Arredondados */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+.btn-main { background: var(--verde-escuro); color: white; }
+.btn-user { background: var(--verde-claro); color: white; }
