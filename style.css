@@ -55,3 +55,62 @@ button {
 
 .btn-main { background: var(--verde-escuro); color: white; }
 .btn-user { background: var(--verde-claro); color: white; }
+
+.cta {
+  background: none;
+}
+
+.cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.cta-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cta-form input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  width: 250px;
+  outline: none;
+}
+
+.cta-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #1b5e20;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-form button:hover {
+  background-color: #144d17;
+}
+.cta {
+  background: #fff;
+  color: #333; /* importante mudar a cor do texto */
+}
+.cta-form input {
+  border: 1px solid #ccc;
+}
+
+.cta-form button {
+  background-color: #4CAF50;
+}
