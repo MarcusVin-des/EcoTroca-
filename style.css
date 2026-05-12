@@ -1,80 +1,164 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+  
+  background-image: url('img/fundoSite.jpeg');
+  background-size: cover;
+  border-radius: 15px;
+  background-position: center;
+  background-attachment: fixed;
+
+
+.overlay {
+  background: rgba(255, 255, 255, 0.85);  
+}
+}
+
+.logo-img {
+    width: 250px; 
+}
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 16px 5%;
-    background: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    gap: 40px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #2e2e2e;
-    white-space: nowrap;
-}
-
-.logo-icone {
-    font-size: 28px;
-}
-
-.logo span {
-    color: #4CAF50;
-}
-
-.navbar nav {
-    flex: 1;
+    padding: 15px 40px;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
+}
+.navbar a:hover {
+    background-color: #2e7d32;
+    color: white;
 }
 
-.navbar ul a {
+.navbar a {
+    text-decoration: none;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.nav {
+  
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
     text-decoration: none;
     color: #333;
-    font-size: 15px;
     font-weight: 500;
-    padding-bottom: 4px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-
-
-.btn-user {
-    background: #4CAF50;
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 22px;
-    white-space: nowrap;
-}
-
-/* Banner Hero */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.jpg');
-    background-size: cover;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 10%;
+nav a:hover {
+    background-color: #2e7d32;
     color: white;
 }
 
-/* Container de Cards (O segredo do alinhamento) */
+nav a {
+    text-decoration: none;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.hero-section {
+  
+  background-image: url('img/fundoHero.jpeg'); 
+  background-size: cover; 
+  background-position: center; 
+  min-height: 450px; 
+  display: flex;
+  align-items: center;
+  padding-left: 10%; 
+  width: 100%;
+}
+
+.hero-content {
+  
+  max-width: 500px;
+}
+
+.bloco-conteudo-ecocircular {
+  
+  font-family: 'Poppins', sans-serif;
+  text-align: left; 
+  padding: 20px;
+}
+
+
+.titulo-plataforma {
+  font-weight: 600; 
+  font-size: 2.2rem; 
+  color: #2e4d41; 
+  margin-top: 0;
+  margin-bottom: 8px; 
+}
+
+.subtitulo-plataforma {
+  font-weight: 400; 
+  font-size: 1.1rem; 
+  color: #4c685b; 
+  margin-top: 0;
+  margin-bottom: 25px; 
+}
+
+
+.botao-saiba-mais {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 50px; 
+  background-image: linear-gradient(180deg, #7ba56a 0%, #5d844e 100%);
+  color: #ffffff; 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 700; 
+  font-size: 0.95rem; 
+  padding: 12px 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.botao-saiba-mais:hover {
+ 
+  background-image: linear-gradient(180deg, #8cb67b 0%, #6a955a 100%);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); 
+}
+
+
+.seta-botao {
+  margin-left: 8px; 
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+
 .container-cards {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: -50px; /* Faz os cards subirem um pouco sobre o banner */
+    margin-top: -45px; 
     padding: 0 5%;
 }
 
@@ -87,7 +171,7 @@
     flex: 1;
 }
 
-/* Botões Arredondados */
+
 button {
     cursor: pointer;
     border: none;
@@ -98,6 +182,75 @@ button {
 
 .btn-main { background: var(--verde-escuro); color: white; }
 .btn-user { background: var(--verde-claro); color: white; }
+
+.como-funciona {
+  padding: 60px 20px;
+  
+  text-align: center;
+  background: linear-gradient(180deg,);
+}
+
+.como-funciona h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #1b5e20;
+  position: relative;
+}
+
+.como-funciona h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #66bb6a;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 260px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
 
 .cta {
   background: none;
@@ -147,8 +300,8 @@ button {
   background-color: #144d17;
 }
 .cta {
-  background: #fff;
-  color: #333; /* importante mudar a cor do texto */
+  background: transparent;
+  color: #333; 
 }
 .cta-form input {
   border: 1px solid #ccc;
@@ -157,3 +310,21 @@ button {
 .cta-form button {
   background-color: #4CAF50;
 }
+html { scroll-behavior: smooth; }
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* O card sobe levemente */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 1px solid #66BB6A;
+}
+@media (max-width: 768px) {
+    .container-cards, .passos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

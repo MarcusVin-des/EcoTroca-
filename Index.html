@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoCircular | Plataforma de Economia Circular</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
 
+  <div class="overlay"></div>
+
     <header class="navbar">
-        <div class="logo">
-            <span class="logo-icone">♻️</span>
-            Eco<span>Circular</span>
-        </div>
+        <div class="logo"><img src="img/logoeco.jpeg" alt="EcoCircular" class="logo-img"></div>
+        
         <nav>
             <ul>
                 <li><a href="#">Início</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Soluções</a></li>
                 <li><a href="#">Contato</a></li>
-            </ul>
+           </ul>
         </nav>
-        <button class="btn-user">Área do Usuário ›</button>
+       <ul> <li><a href="#">Área do Usuário ></a></li> </ul>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Plataforma EcoCircular</h1>
-            <p>Conectando Sustentabilidade e Economia Circular</p>
-            <button class="btn-main">Saiba Mais ></button>
-        </section>
+     <section class="hero-section">
+          <div class="bloco-conteudo-ecocircular">
+               <h1 class="titulo-plataforma">Plataforma EcoCircular</h1>
+               <p class="subtitulo-plataforma">Conectando Sustentabilidade e Economia Circular</p>
+               <a href="#" class="botao-saiba-mais">Saiba Mais<span class="seta-botao">&rsaquo;</span></a>
+          </div>
+    </section>
 
         <section class="container-cards">
             <div class="card">
@@ -52,16 +53,55 @@
             </div>
         </section>
 
-        <section class="como-funciona">
-            <h2>Como Funciona</h2>
-            <div class="passos">
-                <div class="passo"><strong>1. Cadastre-se</strong><p>Crie seu perfil sustentável</p></div>
-                <div class="passo"><strong>2. Conecte-se</strong><p>Encontre oportunidades</p></div>
-                <div class="passo"><strong>3. Transforme</strong><p>Reduza e reutilize</p></div>
-            </div>
-        </section>
+          <section class="como-funciona">
+  <h2>Como Funciona</h2>
+
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 64 64">
+          <rect x="12" y="8" width="40" height="48" rx="6" fill="#E8F5E9"/>
+          <path d="M20 20h24M20 28h24M20 36h16" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Cadastre-se</h3>
+      <p>Crie seu perfil e conte sua proposta sustentável</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 64 64">
+          <circle cx="20" cy="32" r="6" fill="#66BB6A"/>
+          <circle cx="44" cy="20" r="6" fill="#66BB6A"/>
+          <circle cx="44" cy="44" r="6" fill="#66BB6A"/>
+          <line x1="26" y1="30" x2="38" y2="22" stroke="#2E7D32" stroke-width="3"/>
+          <line x1="26" y1="34" x2="38" y2="42" stroke="#2E7D32" stroke-width="3"/>
+        </svg>
+      </div>
+      <h3>Conecte-se</h3>
+      <p>Encontre parceiros e oportunidades circulares</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="14" fill="#A5D6A7"/>
+          <path d="M32 18v6M32 40v6M18 32h6M40 32h6M22 22l4 4M38 38l4 4M22 42l4-4M38 26l4-4"
+                stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Transforme</h3>
+      <p>Reduza, recicle e reutilize de forma eficiente</p>
+    </div>
+  </div>
+</section>
+
     </main>
     <br>
+    
         <section class="cta">
   <div class="cta-container">
     <h2>Junte-se ao Movimento Circular!</h2>
@@ -77,6 +117,26 @@
     <footer>
         <p>&copy; 2026 EcoCircular - Projeto Acadêmico</p>
     </footer>
+
+    </div>
+    <li><a href="#inicio">Início</a></li>
+<li><a href="#soluções">Soluções</a></li>
+
+<section id="soluções" class="container-cards"> ... </section>
+<script>
+    const btnInscricao = document.querySelector('.botao-inscrever'); // Ajuste a classe conforme seu CSS
+    if(btnInscricao) {
+        btnInscricao.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('input[type="email"]').value;
+            if(email) {
+                alert('Obrigado! Enviaremos as novidades da EcoCircular para: ' + email);
+            } else {
+                alert('Por favor, insira um e-mail válido.');
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
