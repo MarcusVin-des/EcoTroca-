@@ -17,15 +17,17 @@
         
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Soluções</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="contato.html">Contato</a></li>
            </ul>
         </nav>
-       <ul> <li><a href="#">Área do Usuário ></a></li> </ul>
+       <ul> <li><a href="#cadastro">Área do Usuário ></a></li> </ul>
     </header>
 
+<footer>
+    </footer>
     <main>
      <section class="hero-section">
           <div class="bloco-conteudo-ecocircular">
@@ -137,6 +139,28 @@
         });
     }
 </script>
+
+<section class="container-dados" style="padding: 40px 5%; background-color: #f9f9f9;">
+    <h2 style="color: #2D5A27; margin-bottom: 20px;">Painel de Controle: Ecotroca</h2>
+    
+    <div style="overflow-x: auto; background: white; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr style="background-color: #2D5A27; color: white;">
+                    <th style="padding: 15px;">Empresa</th>
+                    <th style="padding: 15px;">Material</th>
+                    <th style="padding: 15px;">Quantidade (kg)</th>
+                    <th style="padding: 15px;">Data</th>
+                    <th style="padding: 15px; text-align: center;">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+                </tbody>
+        </table>
+    </div>
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
