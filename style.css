@@ -289,7 +289,7 @@ button {
 .cta-form button {
   padding: 12px 20px;
   border: none;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #1b5e20;
   color: white;
   cursor: pointer;
@@ -328,3 +328,89 @@ html { scroll-behavior: smooth; }
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.detalhes-projeto {
+    padding: 80px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.titulo-sessao {
+    color: #1b4332;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.grid-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-detalhe {
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    border-bottom: 5px solid #2d6a4f;
+}
+
+.card-detalhe:hover {
+    transform: translateY(-10px);
+}
+
+.icon-box {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-detalhe h3 {
+    color: #1b4332;
+    margin-bottom: 15px;
+}
+
+.card-detalhe p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.btn-verde-arredondado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4CAF50; /* Verde principal */
+    color: white !important; /* Cor do texto branca */
+    text-decoration: none !important; /* Remove o sublinhado roxo */
+    padding: 12px 35px;
+    border-radius: 50px; /* Deixa as pontas totalmente arredondadas */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-verde-arredondado:hover {
+    background-color: #45a049; /* Verde um pouco mais escuro */
+    transform: scale(1.05); /* Aumenta levemente o botão */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo da setinha lateral */
+.seta {
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoCircular | Área do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #f4f7f6;">
+
+    <header class="navbar">
+        <div class="logo"><img src="img/logoeco.jpeg" alt="Logo"></div>
+      <nav>
+    <ul>
+        <li><a href="index.html" style="color: #2d6a4f; font-weight: bold;">⬅ Voltar</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main style="padding: 50px 10%;">
+        <h1 style="color: #1b4332; margin-bottom: 30px;">Painel de Gestão de Resíduos</h1>
+
+        <section class="form-container" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h2 style="margin-bottom: 20px;">Cadastrar Novo Material</h2>
+            <form id="form-residuo" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <input type="text" id="empresa" placeholder="Nome da Empresa" required style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                <select id="tipo-material" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                    <option value="Plástico">Plástico (PP/PEAD)</option>
+                    <option value="Têxtil">Resíduos Têxteis</option>
+                    <option value="Metal">Sucata Metálica</option>
+                    <option value="Papel">Papel/Papelão</option>
+                </select>
+                <input type="number" id="quantidade" placeholder="Quantidade (kg)" required style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                <button type="submit" style="background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold;">Cadastrar no Banco</button>
+            </form>
+        </section>
+
+        <section style="margin-top: 50px;">
+            <h2 style="margin-bottom: 20px;">Materiais Disponíveis para Troca</h2>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <thead style="background: #1b4332; color: white;">
+                    <tr>
+                        <th style="padding: 15px; text-align: left;">Empresa</th>
+                        <th style="padding: 15px; text-align: left;">Material</th>
+                        <th style="padding: 15px; text-align: left;">Qtd (kg)</th>
+                        <th style="padding: 15px; text-align: left;">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-corpo">
+                    <tr>
+                        <td>Empresa A</td>
+                        <td>Plástico</td>
+                        <td>100</td>
+                        <td>Disponível</td>
+                    </tr>
+                    <tr>
+                        <td>Empresa B</td>
+                        <td>Papel</td>
+                        <td>200</td>
+                        <td>Disponível</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="banco.js"></script>
+</body>
+</html>
