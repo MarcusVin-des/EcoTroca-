@@ -1,49 +1,23 @@
-// 1. Função para SALVAR os dados
-document.getElementById('meuFormulario').addEventListener('submit', function(e) {
-    e.preventDefault(); // Impede a página de recarregar
+// Nomes das chaves no LocalStorage (O "endereço" dos dados no navegador)
+const CHAVE_RESIDUOS = 'ecocircular_materiais';
 
-    // Coleta os valores dos campos
-    const novoDado = {
-        empresa: document.getElementById('nomeEmpresa').value,
-        material: document.getElementById('tipoMaterial').value,
-        peso: document.getElementById('quantidade').value,
-        data: new Date().toLocaleDateString()
-    };
-
-    // Pega o que já existe no "banco" ou cria uma lista vazia
-    let listaDados = JSON.parse(localStorage.getItem('bancoEcoCircular')) || [];
-
-    // Adiciona o novo cadastro à lista
-    listaDados.push(novoDado);
-
-    // Salva a lista atualizada de volta no LocalStorage
-    localStorage.setItem('bancoEcoCircular', JSON.stringify(listaDados));
-
-    alert('Dados enviados para o banco com sucesso!');
-    this.reset(); // Limpa o formulário
-});
-
-// 2. Função para RECUPERAR e mostrar os dados (Exemplo no console)
-function listarDados() {
-    const dados = JSON.parse(localStorage.getItem('bancoEcoCircular'));
-    console.log("Registros no Banco de Dados Local:", dados);
-}
-// Função para desenhar a tabela na tela
+// Função para renderizar a tabela na tela
 function renderizarTabela() {
     const tabelaCorpo = document.getElementById('tabela-corpo');
-    const dadosCadastrados = JSON.parse(localStorage.getItem('banco_ecocircular')) || [];
+    if (!tabelaCorpo) return; // Só executa se a tabela existir na página
 
-    tabelaCorpo.innerHTML = ""; // Limpa antes de carregar
+    tabelaCorpo.innerHTML = '';
+    const materiais = JSON.parse(localStorage.getItem(CHAVE_RESIDUOS)) || [];
 
-    dadosCadastrados.forEach((registro, index) => {
+    materiais.forEach((item, index) => {
         const linha = `
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 15px;">${registro.empresa}</td>
-                <td style="padding: 15px;">${registro.material}</td>
-                <td style="padding: 15px;">${registro.quantidade}</td>
-                <td style="padding: 15px;">${registro.data}</td>
-                <td style="padding: 15px; text-align: center;">
-                    <button onclick="excluirRegistro(${index})" style="background:#e74c3c; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">Excluir</button>
+            <tr>
+                <td>${item.empresa}</td>
+                <td>${item.material}</td>
+                <td>${item.quantidade} kg</td>
+                <td><span style="color: #2d6a4f; font-weight: bold;">Disponível</span></td>
+                <td>
+                    <button onclick="removerItem(${index})" style="background: #ff4d4d; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Excluir</button>
                 </td>
             </tr>
         `;
@@ -51,24 +25,194 @@ function renderizarTabela() {
     });
 }
 
-// Função capturada pelo formulário (ajuste o ID do seu formulário aqui)
-document.getElementById('seu-formulario-id').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Função para Salvar Empresa/Resíduo
+const formResiduo = document.getElementById('form-residuo');
+if (formResiduo) {
+    formResiduo.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const novoItem = {
-        empresa: document.getElementById('nome-input').value,
-        material: document.getElementById('material-select').value,
-        quantidade: document.getElementById('quantidade-input').value,
-        data: new Date().toLocaleDateString()
+        const novoItem = {
+            empresa: document.getElementById('empresa').value,
+            material: document.getElementById('tipo-material').value,
+            quantidade: document.getElementById('quantidade').value
+        };
+
+        const materiaisAtuais = JSON.parse(localStorage.getItem('ecocircular_db')) || [];
+        materiaisAtuais.push(novoItem);
+        localStorage.setItem('ecocircular_db', JSON.stringify(materiaisAtuais));
+
+        formResiduo.reset();
+        renderizarTabela();
+        alert("Cadastrado com sucesso!");
+    });
+}
+
+// Função para remover item
+window.excluirItem = function(index) {
+    const materiais = JSON.parse(localStorage.getItem('ecocircular_db'));
+    materiais.splice(index, 1);
+    localStorage.setItem('ecocircular_db', JSON.stringify(materiais));
+    renderizarTabela();
+};
+
+// Iniciar a tabela ao carregar a página
+document.addEventListener('DOMContentLoaded', renderizarTabela);
+
+// Função para mostrar os materiais na página inicial (Vitrine)
+function atualizarVitrine() {
+    const vitrine = document.getElementById('vitrine-residuos');
+    if (!vitrine) return;
+
+    const materiais = JSON.parse(localStorage.getItem('ecocircular_materiais')) || [];
+    vitrine.innerHTML = '';
+
+    materiais.forEach((item) => {
+        const card = `
+            <div style="background: white; padding: 20px; border-radius: 15px; shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 5px solid #2d6a4f;">
+                <h3 style="color: #1b4332; margin: 0;">${item.material}</h3>
+                <p style="font-size: 0.9rem; color: #666;">Ofertado por: <strong>${item.empresa}</strong></p>
+                <p style="font-weight: bold; color: #2d6a4f;">Quantidade: ${item.quantidade} kg</p>
+                <button onclick="abrirNegociacao('${item.empresa}', '${item.material}')" 
+                        style="width: 100%; background: #2d6a4f; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                    Negociar / Tenho Interesse
+                </button>
+            </div>
+        `;
+        vitrine.innerHTML += card;
+    });
+}
+
+// Simulação de Comunicação
+window.abrirNegociacao = function(empresa, material) {
+    const mensagem = `Olá ${empresa}, vi seu anúncio no EcoCircular sobre o resíduo de ${material}. Tenho interesse em adquirir esse material para minha linha de produção. Como podemos prosseguir?`;
+    
+    // Simula uma abertura de chat ou e-mail
+    const confirmacao = confirm("Deseja enviar uma proposta para " + empresa + "?\n\nSua mensagem:\n" + mensagem);
+    
+    if (confirmacao) {
+        alert("Proposta enviada com sucesso! A " + empresa + " receberá sua notificação no painel dela.");
+    }
+}
+
+// Chame a função para carregar a vitrine
+document.addEventListener('DOMContentLoaded', atualizarVitrine);
+
+function atualizarVitrine() {
+    const vitrine = document.getElementById('vitrine');
+    
+    // 1. Limpa a vitrine antes de colocar novos itens
+    vitrine.innerHTML = ''; 
+
+    // 2. Pega os materiais que você salvou no LocalStorage
+    const materiais = JSON.parse(localStorage.getItem('banco_residuos')) || [];
+
+    // 3. Cria o HTML de cada card
+    materiais.forEach((item) => {
+        const card = `
+            <div class="card-residuo" style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; margin: 10px;">
+                <h3>${item.material}</h3>
+                <p><strong>Empresa:</strong> ${item.empresa}</p>
+                <p><strong>Quantidade:</strong> ${item.quantidade} kg</p>
+                
+                <button onclick="abrirNegociacao('${item.empresa}', '${item.material}')"
+                    style="width: 100%; background: #2d6a4f; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+                    Negociar / Tenho Interesse
+                </button>
+            </div>
+        `;
+        vitrine.innerHTML += card;
+    });
+}
+
+// Função que dispara o alerta de negociação
+window.abrirNegociacao = function(empresa, material) {
+    const mensagem = `Olá ${empresa}, vi seu anúncio no EcoCircular sobre o resíduo de ${material}. Tenho interesse!`;
+    
+    const confirmacao = confirm("Deseja enviar uma proposta para " + empresa + "?\n\nSua mensagem:\n" + mensagem);
+    
+    if (confirmacao) {
+        alert("Proposta enviada com sucesso! A " + empresa + " receberá sua notificação.");
+    }
+};
+
+// Faz a vitrine carregar assim que a página abrir
+document.addEventListener('DOMContentLoaded', atualizarVitrine);
+
+// Função para carregar a vitrine
+function atualizarVitrine() {
+    const vitrine = document.getElementById('vitrine');
+    if (!vitrine) return; // Segurança caso a div não exista na página
+
+    vitrine.innerHTML = ''; // Limpa o espaço branco
+    const materiais = JSON.parse(localStorage.getItem('banco_residuos')) || [];
+
+    materiais.forEach((item) => {
+        const card = `
+            <div class="card-residuo" style="background: white; border: 1px solid #ddd; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 15px;">
+                <h3 style="color: #2d6a4f; margin-top: 0;">${item.material}</h3>
+                <p><strong>Indústria:</strong> ${item.empresa}</p>
+                <p><strong>Quantidade:</strong> ${item.quantidade} kg</p>
+                <button onclick="abrirNegociacao('${item.empresa}', '${item.material}')" 
+                        style="background: #2d6a4f; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%;">
+                    Tenho Interesse
+                </button>
+            </div>
+        `;
+        vitrine.innerHTML += card;
+    });
+}
+
+// Chame essa função no final do seu script de salvamento (Submit)
+// Exemplo:
+// form.addEventListener('submit', (e) => {
+//    ... código de salvar ...
+//    atualizarVitrine(); 
+// });
+
+// E também quando a página carrega
+document.addEventListener('DOMContentLoaded', atualizarVitrine);
+
+// Função de Salvar com Validação
+const salvarDados = (evento) => {
+    evento.preventDefault();
+
+    const qtdInput = document.getElementById('quantidade');
+    const quantidade = parseFloat(qtdInput.value);
+
+    // Validação: Impede zero ou números negativos
+    if (quantidade <= 0 || isNaN(quantidade)) {
+        alert("⚠️ Por favor, insira uma quantidade válida acima de zero.");
+        qtdInput.focus();
+        return;
+    }
+
+    const novaEmpresa = {
+        empresa: document.getElementById('empresa').value,
+        material: document.getElementById('tipo-material').value,
+        quantidade: quantidade,
+        id: Date.now()
     };
 
-    const listaAtual = JSON.parse(localStorage.getItem('banco_ecocircular')) || [];
-    listaAtual.push(novoItem);
-    localStorage.setItem('banco_ecocircular', JSON.stringify(listaAtual));
+    const dadosAtuais = JSON.parse(localStorage.getItem('banco_residuos')) || [];
+    dadosAtuais.push(novaEmpresa);
+    localStorage.setItem('banco_residuos', JSON.stringify(dadosAtuais));
 
-    renderizarTabela(); // Atualiza a tabela na hora
-    this.reset(); // Limpa os campos
-});
+    document.getElementById('form-residuo').reset();
+    carregarDados(); // Atualiza a tabela
+    atualizarVitrine(); // Atualiza a vitrine de cards
+    alert("✅ Material cadastrado com sucesso!");
+};
 
-// Inicializa a tabela ao abrir o site
-window.onload = renderizarTabela;
+// Função de Remover com Confirmação
+window.removerItem = function(index) {
+    const materiais = JSON.parse(localStorage.getItem('banco_residuos'));
+    const materialNome = materiais[index].material;
+
+    // Feedback Visual de Exclusão
+    if (confirm(`Tem certeza que deseja excluir o registro de "${materialNome}"?`)) {
+        materiais.splice(index, 1);
+        localStorage.setItem('banco_residuos', JSON.stringify(materiais));
+        carregarDados();
+        atualizarVitrine();
+    }
+};

@@ -414,3 +414,81 @@ html {
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+.grid-vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Deixa os cards lado a lado */
+    gap: 20px; /* Espaço entre os cards */
+    margin-top: 20px;
+}
+
+.card-residuo {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card-residuo:hover {
+    transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
+    border-color: #2d6a4f;
+}
+
+/* Ajustes para Telas Menores (Celulares) */
+@media (max-width: 768px) {
+    .dashboard-body {
+        flex-direction: column; /* Joga a sidebar para cima ou esconde */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .dashboard-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .grid-form {
+        grid-template-columns: 1fr; /* Campos um embaixo do outro no celular */
+    }
+
+    .grid-vitrine {
+        grid-template-columns: 1fr; /* Cards ocupam a largura toda no celular */
+    }
+}
+.grid-vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card-residuo {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 5px solid #2d6a4f; /* Verde da EcoCircular */
+    transition: transform 0.2s;
+}
+
+.card-residuo:hover {
+    transform: translateY(-5px);
+}
+
+.btn-contato {
+    background-color: #1b4332;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}

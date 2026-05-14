@@ -45,7 +45,7 @@
                         <th style="padding: 15px; text-align: left;">Status</th>
                     </tr>
                 </thead>
-                <tbody id="tabela-corpo">
+                <tbody id="corpo-tabela">
                     <tr>
                         <td>Empresa A</td>
                         <td>Plástico</td>
@@ -62,7 +62,54 @@
             </table>
         </section>
     </main>
+    
+<div class="card-painel">
+    <h2>Vitrine de Oportunidades</h2>
+    <p>Veja o que outras indústrias de Sorocaba estão ofertando:</p>
+    
+    <div id="vitrine" class="grid-vitrine"></div>
+</div>
+    <form id="form-residuo">
+    <input type="text" id="empresa" placeholder="Nome da Indústria" required>
+    <select id="tipo-material">
+        <option value="Plástico">Plástico (PP/PEAD)</option>
+        <option value="Têxtil">Retalhos Têxteis</option>
+        <option value="Metal">Sucata de Metal</option>
+    </select>
+    <input type="number" id="quantidade" placeholder="Quantidade (kg)" required>
+    <input type="number" id="quantidade" placeholder="Quantidade (kg)" required>
 
+<input type="text" id="contato-empresa" placeholder="WhatsApp ou E-mail" required>
+
+<button type="submit" id="btn-salvar">Cadastrar no Banco</button>
+</form>
+<table class="tabela-db">
+    <thead>
+        <tr>
+            <th>Indústria</th>
+            <th>Material</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody id="tabela-corpo">
+        </tbody>
+</table>
+
+<div class="search-container" style="margin-bottom: 20px;">
+    <input type="text" id="campo-busca" placeholder="🔍 Buscar por empresa ou material..." 
+    style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem;">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+<button onclick="gerarPDF()" style="background: #1b4332; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-bottom: 20px;">
+    <i class="fas fa-file-pdf"></i> Gerar Relatório de Impacto (PDF)
+</button>
+
+    <div id="vitrine" class="grid-vitrine"></div>
     <script src="banco.js"></script>
+    
 </body>
 </html>
