@@ -1,281 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoCircular | Plataforma de Economia Circular</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
+    <title>EcoCircular Sorocaba - Economia Circular</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
-  <div class="overlay"></div>
-
-    <header class="navbar">
-        <div class="logo"><img src="img/logoeco.jpeg" alt="EcoCircular" class="logo-img"></div>
-        
-        <nav>
+    <header>
+        <nav class="container">
+            <h1 class="logo">Eco<span>Circular</span></h1>
             <ul>
-                <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#contato">Contato</a></li>
-           </ul>
+                <li><a href="#vitrine">Vitrine de Resíduos</a></li>
+                <li><a href="usuario.html" class="btn-login">Área do Usuário</a></li>
+            </ul>
         </nav>
-       <li><a href="usuario.html" class="btn-dashboard">Area do Usuário</a></li>
     </header>
 
-<footer>
-    </footer>
-    <main>
-     <section class="hero-section">
-          <div class="bloco-conteudo-ecocircular">
-               <h1 class="titulo-plataforma">Plataforma EcoCircular</h1>
-               <p class="subtitulo-plataforma">Conectando Sustentabilidade e Economia Circular</p>
-              <a href="#saiba-mais" class="btn-verde-arredondado">Saiba Mais<span class="seta">›</span></a>
-          </div>
-    </section>
-
-        <section class="container-cards">
-            <div class="card">
-                <div class="icon">🏢</div>
-                <h3>Empresas Sustentáveis</h3>
-                <p>Encontre parceiros eco-responsáveis</p>
-            </div>
-            <div class="card">
-                <div class="icon">♻️</div>
-                <h3>Reciclagem e Reuso</h3>
-                <p>Dê um novo ciclo aos seus materiais</p>
-            </div>
-            <div class="card">
-                <div class="icon">🤝</div>
-                <h3>Economia Colaborativa</h3>
-                <p>Troque, compartilhe e reutilize</p>
-            </div>
-        </section>
-
-          <section class="como-funciona">
-  <h2>Como Funciona</h2>
-
-  <div class="cards">
-    <!-- Card 1 -->
-    <div class="card">
-      <div class="icon">
-        <svg viewBox="0 0 64 64">
-          <rect x="12" y="8" width="40" height="48" rx="6" fill="#E8F5E9"/>
-          <path d="M20 20h24M20 28h24M20 36h16" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Cadastre-se</h3>
-      <p>Crie seu perfil e conte sua proposta sustentável</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <div class="icon">
-        <svg viewBox="0 0 64 64">
-          <circle cx="20" cy="32" r="6" fill="#66BB6A"/>
-          <circle cx="44" cy="20" r="6" fill="#66BB6A"/>
-          <circle cx="44" cy="44" r="6" fill="#66BB6A"/>
-          <line x1="26" y1="30" x2="38" y2="22" stroke="#2E7D32" stroke-width="3"/>
-          <line x1="26" y1="34" x2="38" y2="42" stroke="#2E7D32" stroke-width="3"/>
-        </svg>
-      </div>
-      <h3>Conecte-se</h3>
-      <p>Encontre parceiros e oportunidades circulares</p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <div class="icon">
-        <svg viewBox="0 0 64 64">
-          <circle cx="32" cy="32" r="14" fill="#A5D6A7"/>
-          <path d="M32 18v6M32 40v6M18 32h6M40 32h6M22 22l4 4M38 38l4 4M22 42l4-4M38 26l4-4"
-                stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Transforme</h3>
-      <p>Reduza, recicle e reutilize de forma eficiente</p>
-    </div>
-  </div>
-</section>
-
-    </main>
-    <br>
-    
-        <section class="cta">
-  <div class="cta-container">
-    <h2>Junte-se ao Movimento Circular!</h2>
-    <p>Cadastre-se e faça parte da mudança para um futuro mais sustentável.</p>
-
-    <form class="cta-form">
-      <input type="email" placeholder="Seu e-mail" required>
-      <button type="submit">Inscrever-se ➜</button>
-    </form>
-  </div>
-</section>
-
-    <footer>
-        <p>&copy; 2026 EcoCircular - Projeto Acadêmico</p>
-    </footer>
-
-    </div>
-
-
-<section id="soluções" class="container-cards"> ... </section>
-<script>
-    const btnInscricao = document.querySelector('.botao-inscrever'); // Ajuste a classe conforme seu CSS
-    if(btnInscricao) {
-        btnInscricao.addEventListener('click', function(e) {
-            e.preventDefault();
-            const email = document.querySelector('input[type="email"]').value;
-            if(email) {
-                alert('Obrigado! Enviaremos as novidades da EcoCircular para: ' + email);
-            } else {
-                alert('Por favor, insira um e-mail válido.');
-            }
-        });
-    }
-</script>
-
-<section class="container-dados" style="padding: 40px 5%; background-color: #f9f9f9;">
-    <h2 style="color: #2D5A27; margin-bottom: 20px;">Painel de Controle: Ecotroca</h2>
-    
-    <div style="overflow-x: auto; background: white; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
-        <table style="width: 100%; border-collapse: collapse; text-align: left;">
-            <thead>
-                <tr style="background-color: #2D5A27; color: white;">
-                    <th style="padding: 15px;">Empresa</th>
-                    <th style="padding: 15px;">Material</th>
-                    <th style="padding: 15px;">Quantidade (kg)</th>
-                    <th style="padding: 15px;">Data</th>
-                    <th style="padding: 15px; text-align: center;">Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tabela-corpo">
-                </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="card-painel">
-    <h2><i class="fas fa-store"></i> Vitrine de Oportunidades</h2>
-    <p>Veja o que outras indústrias de Sorocaba estão ofertando:</p>
-    
-    <div id="vitrine" class="grid-vitrine"></div>
-</section>
-
-<script src="script.js"></script>
-
-<section id="sobre" style="padding: 80px 10%; background-color: #f9f9f9;">
-    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <h2 style="color: #2D5A27; font-size: 2.5rem; margin-bottom: 20px;">Sobre o Ecotroca</h2>
-        <div style="width: 60px; height: 4px; background: #2D5A27; margin: 0 auto 30px;"></div>
-        
-        <p style="font-size: 1.2rem; line-height: 1.8; color: #333; margin-bottom: 20px;">
-            O <strong>EcoCircular</strong> nasceu da necessidade de transformar o modelo industrial linear em um sistema regenerativo. Nosso foco é conectar indústrias da região de Sorocaba para que o resíduo de uma produção se torne a matéria-prima de outra, eliminando o desperdício.
-        </p>
-
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
-            Através do nosso simulador e marketplace, facilitamos a logística reversa de materiais como plásticos e resíduos têxteis, garantindo que recursos valiosos voltem ao ciclo produtivo e ajudando empresas a atingirem suas metas de sustentabilidade (ESG).
-        </p>
-    </div>
-</section>
-
-<section id="saiba-mais" class="detalhes-projeto">
-    <div class="container">
-        <h2 class="titulo-sessao">Como Transformamos a Indústria</h2>
-        <p class="subtitulo">Entenda o ciclo da simbiose industrial e o impacto real nas métricas de ESG.</p>
-
-        <div class="grid-detalhes">
-            <div class="card-detalhe">
-                <div class="icon-box">🔄</div>
-                <h3>O Ciclo da Simbiose</h3>
-                <p>Mapeamos resíduos de indústrias em Sorocaba (como retalhos têxteis e polímeros) e os conectamos a empresas que os utilizam como recurso, evitando que 100% desse material pare em aterros.</p>
-            </div>
-
-            <div class="card-detalhe">
-                <div class="icon-box">📉</div>
-                <h3>Redução de Carbono</h3>
-                <p>Ao reinserir materiais no ciclo produtivo, reduzimos a necessidade de extração virgem. Isso gera uma economia direta na pegada de CO2, ajudando sua empresa a atingir metas globais de sustentabilidade.</p>
-            </div>
-
-            <div class="card-detalhe">
-                <div class="icon-box">💰</div>
-                <h3>Economia Circular</h3>
-                <p>O que antes era custo de descarte torna-se oportunidade de negócio. Promovemos um ecossistema onde a sustentabilidade gera lucro e eficiência operacional para o polo industrial regional.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="solucoes" style="padding: 100px 5%; background-color: #f8fafc;">
-    <h2 style="text-align: center; color: #1b4332; font-size: 2.5rem; margin-bottom: 50px;">Nossas Soluções Industriais</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-        
-        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-top: 5px solid #2d6a4f;">
-            <div style="font-size: 3rem; margin-bottom: 20px;">🔄</div>
-            <h3 style="color: #1b4332;">Logística Reversa</h3>
-            <p>Rastreamento completo do ciclo de vida dos materiais, garantindo que o resíduo volte ao processo produtivo de forma eficiente.</p>
-        </div>
-
-        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-top: 5px solid #2d6a4f;">
-            <div style="font-size: 3rem; margin-bottom: 20px;">🤝</div>
-            <h3 style="color: #1b4332;">Hub de Simbiose</h3>
-            <p>Conectamos indústrias que geram excedentes com parceiros que utilizam esses materiais como recurso, reduzindo custos de extração.</p>
-        </div>
-
-        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-top: 5px solid #2d6a4f;">
-            <div style="font-size: 3rem; margin-bottom: 20px;">📈</div>
-            <h3 style="color: #1b4332;">Relatórios ESG</h3>
-            <p>Cálculo real do impacto ambiental evitado e geração de relatórios de sustentabilidade para certificações industriais.</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="contato" style="padding: 100px 10%; background-color: #1b4332; color: white;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-        
-        <div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Fale Conosco</h2>
-            <p style="font-size: 1.1rem; color: #95d5b2; margin-bottom: 30px;">
-                Dúvidas sobre como integrar sua indústria ao movimento circular? Nossa equipe técnica em Sorocaba está pronta para ajudar.
-            </p>
-            <ul style="list-style: none; padding: 0; line-height: 2;">
-                <li>📍 <strong>Endereço:</strong> Distrito Industrial, Sorocaba - SP</li>
-                <li>📧 <strong>E-mail:</strong> contato@ecocircular.com.br</li>
-                <li>📞 <strong>Telefone:</strong> (15) 99999-9999</li>
-            </ul>
-        </div>
-
-        <div style="background: white; padding: 30px; border-radius: 15px; color: #333;">
-            <form action="#">
-                <input type="text" placeholder="Nome da Empresa" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                <input type="email" placeholder="Seu E-mail" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                <textarea placeholder="Sua mensagem" rows="4" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
-                <button type="submit" style="width: 100%; padding: 15px; background: #2d6a4f; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
-                    Enviar Mensagem
-                </button>
+    <section class="hero container">
+        <div class="hero-content">
+            <h2>Transforme resíduos industriais em recursos valiosos.</h2>
+            <p>Conectamos indústrias em Sorocaba para promover a economia circular e reduzir o impacto ambiental.</p>
+            
+            <form class="cta-form">
+                <input type="email" placeholder="Digite seu e-mail corporativo" required>
+                <button type="submit">Começar Agora</button>
             </form>
         </div>
+    </section>
 
+<section id="solucoes" class="container">
+    <h2 class="section-title" style="text-align: center; margin-top: 50px;">Nossas Soluções</h2>
+    <div class="grid-solucoes">
+        <div class="card-solucao">
+            <div class="icon-solucao">📉</div>
+            <h3>Eficiência Industrial</h3>
+            <p>Reduzimos custos de descarte transformando resíduos em novas matérias-primas para o polo industrial.</p>
+        </div>
+        
+        <div class="card-solucao">
+            <div class="icon-solucao">⚖️</div>
+            <h3>Compliance & ESG</h3>
+            <p>Garantimos que sua empresa esteja em total conformidade com as leis ambientais e métricas de sustentabilidade.</p>
+        </div>
+
+        <div class="card-solucao">
+            <div class="icon-solucao">🌿</div>
+            <h3>Impacto Positivo</h3>
+            <p>Preservamos o ecossistema de Sorocaba diminuindo drasticamente o volume de lixo enviado para aterros.</p>
+        </div>
     </div>
 </section>
 
-    <li><a href="#inicio">Início</a></li>
-<li><a href="#soluções">Soluções</a></li>
+    <section id="vitrine" class="vitrine container">
+        <h2 class="section-title">Resíduos Disponíveis em Sorocaba</h2>
+        <p class="section-subtitle">Itens cadastrados recentemente por empresas parceiras.</p>
+        
+        <div id="grid-vitrine" class="grid-residuos">
+            </div>
+    </section>
 
-<section id="mercado" style="padding: 60px 10%; background: #f0f4f8;">
-    <h2 style="text-align: center; color: #1b4332;">Materiais Disponíveis em Sorocaba</h2>
-    <p style="text-align: center; margin-bottom: 30px;">Veja o que outras indústrias estão ofertando para simbiose.</p>
-    
-    <div id="vitrine" class="grid-vitrine"></div>
+    <footer class="container">
+        <p>&copy; 2026 EcoCircular Sorocaba - Projeto Acadêmico de Economia Circular.</p>
+    </footer>
+
+  <section class="missao-container">
+    <div class="missao-content">
+        <div class="missao-info">
+            <h2 class="titulo-verde">Nossa Missão</h2>
+            <div class="linha-decorativa"></div>
+            
+            <p>O <strong>EcoCircular Sorocaba</strong> nasceu da necessidade de transformar a realidade industrial da nossa região. Acreditamos que o que é considerado "lixo" para uma empresa, pode ser a matéria-prima valiosa para outra.</p>
+            
+            <p>Nosso propósito é facilitar a transição para a <strong>Economia Circular</strong>, conectando indústrias locais de forma inteligente e sustentável. Através da nossa plataforma, promovemos a redução do descarte em aterros e incentivamos o reaproveitamento de recursos, gerando economia para as empresas e fôlego para o planeta.</p>
+            
+            <div class="tags-missao">
+                <span class="tag-item">🌱 Sustentabilidade</span>
+                <span class="tag-item">♻️ Reciclagem Industrial</span>
+                <span class="tag-item">📍 Foco em Sorocaba</span>
+            </div>
+        </div>
+
+        <div class="missao-visual">
+            <div class="foto-wrapper">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" alt="Aperto de mãos sustentável">
+                
+                <div class="card-conexao">
+                    <h3>+ Conexão</h3>
+                    <p>- Impacto Ambiental</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<script src="script.js"></script>
-<script src="banco.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

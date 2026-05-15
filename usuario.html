@@ -2,104 +2,69 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>EcoCircular | Área do Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gestão - EcoCircular</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #f4f7f6;">
+<body>
 
-    <header class="navbar">
-        <div class="logo"><img src="img/logoeco.jpeg" alt="Logo"></div>
-      <nav>
-    <ul>
-        <li><a href="index.html" style="color: #2d6a4f; font-weight: bold;">⬅ Voltar</a></li>
-    </ul>
-</nav>
+    <header>
+        <nav class="container">
+            <h1 class="logo">Eco<span>Circular</span></h1>
+            <ul>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main style="padding: 50px 10%;">
-        <h1 style="color: #1b4332; margin-bottom: 30px;">Painel de Gestão de Resíduos</h1>
+    <main class="container">
+        <section class="card-painel">
+            <h2>Cadastrar Novo Resíduo</h2>
+            <form id="form-residuo">
+                <div class="input-group">
+                    <label for="empresa">Nome da Empresa:</label>
+                    <input type="text" id="empresa" required placeholder="Ex: Tecidos Sorocaba">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tipo-material">Tipo de Material:</label>
+                    <input type="text" id="tipo-material" required placeholder="Ex: Retalhos de Algodão">
+                </div>
 
-        <section class="form-container" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <h2 style="margin-bottom: 20px;">Cadastrar Novo Material</h2>
-            <form id="form-residuo" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <input type="text" id="empresa" placeholder="Nome da Empresa" required style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
-                <select id="tipo-material" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
-                    <option value="Plástico">Plástico (PP/PEAD)</option>
-                    <option value="Têxtil">Resíduos Têxteis</option>
-                    <option value="Metal">Sucata Metálica</option>
-                    <option value="Papel">Papel/Papelão</option>
-                </select>
-                <input type="number" id="quantidade" placeholder="Quantidade (kg)" required style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
-                <button type="submit" style="background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold;">Cadastrar no Banco</button>
+                <div class="input-group">
+                    <label for="quantidade">Quantidade (kg):</label>
+                    <input type="number" id="quantidade" required placeholder="Ex: 50">
+                </div>
+
+                <div class="input-group">
+                    <label for="contato-empresa">WhatsApp ou E-mail:</label>
+                    <input type="text" id="contato-empresa" required placeholder="Ex: 15999999999">
+                </div>
+
+                <button type="submit" class="btn-save">Salvar no Sistema</button>
             </form>
         </section>
 
-       <div class="card-painel" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 20px;">
-    <h2 style="color: #1b4332; margin-bottom: 15px;">Materiais Disponíveis para Troca</h2>
-    
-    <table style="width: 100%; border-collapse: collapse;">
-        <thead style="background-color: #2d6a4f; color: white;">
-            <tr>
-                <th style="padding: 12px; text-align: left;">Empresa</th>
-                <th style="padding: 12px; text-align: left;">Material</th>
-                <th style="padding: 12px; text-align: left;">Quantidade</th>
-                <th style="padding: 12px; text-align: left;">Data</th>
-                <th style="padding: 12px; text-align: left;">Ações</th>
-            </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-            </tbody>
-    </table>
-    
-    </div>
-    
-<div class="card-painel">
-    <h2>Vitrine de Oportunidades</h2>
-    <p>Veja o que outras indústrias de Sorocaba estão ofertando:</p>
-    
-    <div id="vitrine" class="grid-vitrine"></div>
-</div>
-    <form id="form-residuo">
-    <input type="text" id="empresa" placeholder="Nome da Indústria" required>
-    <select id="tipo-material">
-        <option value="Plástico">Plástico (PP/PEAD)</option>
-        <option value="Têxtil">Retalhos Têxteis</option>
-        <option value="Metal">Sucata de Metal</option>
-    </select>
-    <input type="number" id="quantidade" placeholder="Quantidade (kg)" required>
-    <input type="number" id="quantidade" placeholder="Quantidade (kg)" required>
+        <section class="card-painel" style="margin-top: 30px;">
+            <h2>Materiais Disponíveis para Troca</h2>
+            <div style="overflow-x: auto;">
+                <table class="tabela-db">
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Material</th>
+                            <th>Qtd (kg)</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-<input type="text" id="contato-empresa" placeholder="WhatsApp ou E-mail" required>
-
-<button type="submit" id="btn-salvar">Cadastrar no Banco</button>
-</form>
-<table class="tabela-db">
-    <thead>
-        <tr>
-            <th>Indústria</th>
-            <th>Material</th>
-            <th>Quantidade</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody id="tabela-corpo">
-        </tbody>
-</table>
-
-<div class="search-container" style="margin-bottom: 20px;">
-    <input type="text" id="campo-busca" placeholder="🔍 Buscar por empresa ou material..." 
-    style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem;">
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
-
-<button onclick="gerarPDF()" style="background: #1b4332; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-bottom: 20px;">
-    <i class="fas fa-file-pdf"></i> Gerar Relatório de Impacto (PDF)
-</button>
-
-    <div id="vitrine" class="grid-vitrine"></div>
-    <script src="banco.js"></script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
